@@ -1,0 +1,66 @@
+## Operational Features
+
+1. **One-Click Installation**:
+   - Handles all dependencies
+   - Creates proper system directories
+   - Sets up service user with correct permissions
+   - Configures logging infrastructure
+
+2. **Enhanced Security**:
+   - Proper file permissions and ownership
+   - Service runs under dedicated user
+   - Added actual encryption (Fernet) for secure memory storage
+   - Secure configuration handling
+
+3. **Monitoring and Interaction**:
+   - Comprehensive CLI interface (aicli command)
+   - Systemd service for proper process management
+   - Detailed status reporting including CPU usage
+   - Log viewing capabilities
+
+4. **Improved Core Features**:
+   - Added CPU monitoring via psutil
+   - Enhanced encryption for secure memory
+   - Both console and file logging
+   - Better configuration handling
+
+## Usage Examples
+
+1. **Check system status**:
+   
+bash
+   aicli status
+
+
+2. **Store secure data**:
+   
+bash
+   aicli memory store api_key "12345-67890" --secure
+
+
+3. **Retrieve data**:
+   
+bash
+   aicli memory retrieve api_key --secure
+
+
+4. **Write to log**:
+   
+bash
+   aicli log write "Maintenance performed" --level info
+
+
+5. **View logs**:
+   
+bash
+   aicli log view --lines 50
+
+
+6. **Service management**:
+   
+bash
+   sudo systemctl restart aibackbone
+   sudo systemctl status aibackbone
+
+
+This implementation provides a complete, production-ready deployment of the AI Backbone system with proper security, monitoring, and human interaction capabilities
